@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448832513908",
+    "project_id": "academic-atelier-4c514",
+    "storage_bucket": "academic-atelier-4c514.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448832513908:android:b3219c6b7df62240a1ae21",
+        "android_client_info": {
+          "package_name": "com.example.academic_atelier"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAdOIlqquL99WlaA52Cpr0COkGapQ8QZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

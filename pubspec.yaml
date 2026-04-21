@@ -1,0 +1,37 @@
+name: academic_atelier
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  firebase_core: ^3.0.0
+  firebase_auth: ^5.0.0
+  cloud_firestore: ^5.0.0
+  firebase_messaging: ^15.0.0
+  flutter_local_notifications: ^17.2.2
+  intl: ^0.19.0
+  pdf: ^3.10.8
+  printing: ^5.11.1
+  path_provider: ^2.1.2
+  url_launcher: ^6.2.5
+  flutter_native_splash: ^2.4.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+flutter_native_splash:
+  color: "#448AFF"
+  android_12:
+    color: "#448AFF"
+  fullscreen: false
