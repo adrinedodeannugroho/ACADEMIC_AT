@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kebijakan Privasi — Academic Atelier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:        #2E75B6;
+      --blue-mid:    #4A90D9;
+      --blue-light:  #5B9BD5;
+      --blue-pale:   #EBF3FB;
+      --blue-soft:   #D6E8F7;
+      --purple-grad: #6B73E8;
+      --dark:        #1a2332;
+      --text:        #2d3748;
+      --gray:        #4a5568;
+      --gray-light:  #718096;
+      --border:      #e2ecf5;
+      --bg:          #f5f8fc;
+      --white:       #ffffff;
+      --card-shadow: 0 2px 12px rgba(46,117,182,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ─── TOP NAV ─── */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(46,117,182,.08);
+    }
+    .topnav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      width: 32px; height: 32px;
+    }
+    .nav-logo-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--blue), var(--purple-grad));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon svg { width: 18px; height: 18px; }
+    .nav-brand {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+    .nav-brand span {
+      display: block;
+      font-size: .68rem;
+      font-weight: 400;
+      color: var(--gray-light);
+      letter-spacing: .04em;
+    }
+    .nav-sep {
+      flex: 1;
+    }
+    .nav-badge {
+      font-size: .72rem;
+      font-weight: 500;
+      color: var(--blue);
+      background: var(--blue-pale);
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--blue-soft);
+      white-space: nowrap;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 50%, var(--purple-grad) 100%);
+      padding: 52px 28px 44px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -.02em;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,.78);
+      font-size: .88rem;
+      font-weight: 400;
+    }
+    .hero-sub strong {
+      color: rgba(255,255,255,.95);
+      font-weight: 600;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 28px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR TOC ─── */
+    .sidebar {
+      position: sticky;
+      top: 72px;
+    }
+    .toc-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    .toc-header {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      padding: 14px 18px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+    }
+    .toc-list {
+      list-style: none;
+      padding: 8px 0;
+    }
+    .toc-list li a {
+      display: block;
+      padding: 7px 18px;
+      font-size: .82rem;
+      color: var(--gray);
+      text-decoration: none;
+      transition: all .15s;
+      border-left: 3px solid transparent;
+      line-height: 1.35;
+    }
+    .toc-list li a:hover,
+    .toc-list li a.active {
+      color: var(--blue);
+      background: var(--blue-pale);
+      border-left-color: var(--blue);
+    }
+    .toc-updated {
+      padding: 10px 18px 14px;
+      font-size: .72rem;
+      color: var(--gray-light);
+      border-top: 1px solid var(--border);
+    }
+    .toc-updated strong { color: var(--blue); }
+
+    /* ─── CONTENT ─── */
+    .content {}
+
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 16px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2px;
+    }
+    .section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -.01em;
+      line-height: 1.3;
+    }
+
+    .section p {
+      margin-bottom: 12px;
+      color: var(--gray);
+      font-size: .92rem;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section a { color: var(--blue); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    /* table */
+    .pp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .85rem;
+      margin: 16px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .pp-table thead tr {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    }
+    .pp-table th {
+      padding: 11px 16px;
+      text-align: left;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .pp-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    .pp-table tbody tr:last-child td { border-bottom: none; }
+    .pp-table tbody tr:nth-child(even) td { background: var(--blue-pale); }
+    .pp-table td strong { color: var(--dark); font-weight: 600; }
+    .pp-badge {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    /* list */
+    .pp-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+    .pp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+    .pp-list li:last-child { border-bottom: none; }
+    .pp-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      margin-top: 7px;
+    }
+
+    /* info callout */
+    .callout {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--blue-pale);
+      border: 1px solid var(--blue-soft);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: .88rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+    .callout-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .callout strong { color: var(--blue); }
+
+    /* rights grid */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .right-item {
+      background: var(--blue-pale);
+      border: 1px solid var(--blue-soft);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .right-item .ri-title {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .right-item .ri-title span { font-size: 1rem; }
+    .right-item p {
+      font-size: .82rem !important;
+      color: var(--gray-light) !important;
+      margin: 0 !important;
+    }
+
+    /* contact */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, var(--dark) 0%, #1e3a5f 100%);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-top: 16px;
+      color: var(--white);
+    }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-row h4 {
+      font-size: .75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .contact-row a {
+      color: #90c8ef;
+      font-size: .92rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      text-align: center;
+      padding: 24px 28px;
+      font-size: .78rem;
+      color: var(--gray-light);
+    }
+    footer strong { color: var(--blue); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 20px 16px 60px;
+        gap: 20px;
+      }
+      .sidebar {
+        position: static;
+      }
+      .toc-card { display: none; }
+      .mobile-toc {
+        display: block !important;
+      }
+      .section {
+        padding: 22px 18px;
+      }
+      .rights-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 36px 16px 32px; }
+      .topnav-inner { padding: 0 16px; }
+    }
+
+    /* mobile toc accordion */
+    .mobile-toc {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 4px;
+    }
+    .mobile-toc summary {
+      padding: 14px 18px;
+      cursor: pointer;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--dark);
+      background: var(--blue-pale);
+      border-bottom: 1px solid var(--border);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mobile-toc summary::after {
+      content: '▾';
+      margin-left: auto;
+      color: var(--blue);
+    }
+    .mobile-toc[open] summary::after { content: '▴'; }
+    .mobile-toc ol {
+      padding: 8px 0;
+      list-style: none;
+    }
+    .mobile-toc ol li a {
+      display: block;
+      padding: 8px 18px;
+      font-size: .83rem;
+      color: var(--gray);
+      text-decoration: none;
+    }
+    .mobile-toc ol li a:hover { color: var(--blue); }
+
+    .material-symbols-rounded {
+      font-variation-settings:
+        'FILL' 1,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 24;
+      font-size: 20px;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+        <img src="/logo-app.png" alt="LOGO APLIKASI" style="height: 35px;">
+      <div class="nav-brand">
+        Academic Atelier
+        <span>Sistem Bimbingan Skripsi</span>
+      </div>
+    </a>
+    <div class="nav-sep"></div>
+    <div class="nav-badge">Kebijakan Privasi</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Kebijakan Privasi</h1>
+    <p class="hero-sub">
+      Berlaku sejak <strong>Mei 2026</strong> &nbsp;·&nbsp;
+      Versi 1.0.2
+    </p>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="toc-card">
+      <div class="toc-header">
+        <span class="material-symbols-rounded">list_alt</span>
+        Daftar Isi
+      </div>
+      <ul class="toc-list" id="toc-list">
+        <li><a href="#s1">1. Pendahuluan</a></li>
+        <li><a href="#s2">2. Data yang Dikumpulkan</a></li>
+        <li><a href="#s3">3. Penggunaan Data</a></li>
+        <li><a href="#s4">4. Penyimpanan &amp; Keamanan</a></li>
+        <li><a href="#s5">5. Berbagi dengan Pihak Ketiga</a></li>
+        <li><a href="#s6">6. Hak Pengguna</a></li>
+        <li><a href="#s7">7. Pengguna di Bawah Umur</a></li>
+        <li><a href="#s8">8. Perubahan Kebijakan</a></li>
+        <li><a href="#s9">9. Hubungi Kami</a></li>
+      </ul>
+      <div class="toc-updated">
+        Terakhir diperbarui:<br>
+        <strong>Mei 2026</strong>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- Mobile TOC -->
+    <details class="mobile-toc">
+    <div class="toc-header">
+      <span class="material-symbols-rounded">list_alt</span>
+      Daftar Isi
+    </div>
+      <ol>
+        <li><a href="#s1">1. Pendahuluan</a></li>
+        <li><a href="#s2">2. Data yang Dikumpulkan</a></li>
+        <li><a href="#s3">3. Penggunaan Data</a></li>
+        <li><a href="#s4">4. Penyimpanan &amp; Keamanan</a></li>
+        <li><a href="#s5">5. Berbagi dengan Pihak Ketiga</a></li>
+        <li><a href="#s6">6. Hak Pengguna</a></li>
+        <li><a href="#s7">7. Pengguna di Bawah Umur</a></li>
+        <li><a href="#s8">8. Perubahan Kebijakan</a></li>
+        <li><a href="#s9">9. Hubungi Kami</a></li>
+      </ol>
+    </details>
+
+    <!-- S1 -->
+    <div class="section" id="s1">
+      <div class="section-head">
+        <div class="section-num">1</div>
+        <h2>Pendahuluan</h2>
+      </div>
+      <p>
+        Kebijakan Privasi ini menjelaskan bagaimana <strong>Academic Atelier</strong> mengumpulkan,
+        menggunakan, menyimpan, dan melindungi informasi pribadi pengguna
+        <em>Aplikasi Sistem Bimbingan Skripsi</em>.
+      </p>
+      <p>
+        Dengan mendaftar dan menggunakan aplikasi ini, Anda menyatakan telah membaca, memahami,
+        dan menyetujui seluruh ketentuan dalam Kebijakan Privasi ini. Kebijakan ini berlaku bagi
+        semua pengguna tanpa terkecuali: <strong>mahasiswa</strong>, <strong>dosen pembimbing</strong>,
+        <strong>dosen reviewer</strong>, maupun <strong>admin kampus</strong>.
+      </p>
+      <div class="callout">
+        <span class="callout-icon material-symbols-rounded">info</span>
+        <div>
+          <strong>Konteks aplikasi:</strong> Aplikasi ini dikembangkan sebagai proyek akademik
+          di Universitas Amikom Purwokerto dan beroperasi dalam lingkungan institusi pendidikan
+          yang tertutup.
+        </div>
+      </div>
+    </div>
+
+    <!-- S2 -->
+    <div class="section" id="s2">
+      <div class="section-head">
+        <div class="section-num">2</div>
+        <h2>Data yang Kami Kumpulkan</h2>
+      </div>
+      <p>
+        Kami hanya mengumpulkan data yang benar-benar diperlukan untuk menjalankan fungsi aplikasi.
+        Tidak ada data yang dikumpulkan di luar yang tercantum di bawah ini.
+      </p>
+      <table class="pp-table">
+        <thead>
+          <tr>
+            <th>Jenis Data</th>
+            <th>Keterangan</th>
+            <th>Berlaku Untuk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nama Lengkap</strong></td>
+            <td>Ditampilkan pada profil dan percakapan dalam aplikasi</td>
+            <td><span class="pp-badge">Semua</span></td>
+          </tr>
+          <tr>
+            <td><strong>Alamat Email</strong></td>
+            <td>Digunakan untuk autentikasi dan notifikasi sistem</td>
+            <td><span class="pp-badge">Semua</span></td>
+          </tr>
+          <tr>
+            <td><strong>NIM</strong></td>
+            <td>Identitas akademik mahasiswa, diisi saat registrasi, bersifat permanen</td>
+            <td><span class="pp-badge">Mahasiswa</span></td>
+          </tr>
+          <tr>
+            <td><strong>NIDN</strong></td>
+            <td>Identitas akademik dosen, diisi saat registrasi, bersifat permanen</td>
+            <td><span class="pp-badge">Dosen</span></td>
+          </tr>
+          <tr>
+            <td><strong>Foto Profil</strong></td>
+            <td>Gambar dari galeri perangkat, dapat diubah kapan saja (opsional)</td>
+            <td><span class="pp-badge">Semua</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nomor Telepon</strong></td>
+            <td>Opsional — untuk verifikasi keamanan tambahan via SMS OTP</td>
+            <td><span class="pp-badge">Semua</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <span class="callout-icon material-symbols-rounded">folder</span>
+        <div>
+          <strong>Dokumen skripsi</strong> tidak disimpan di server kami. Mahasiswa mengunggah
+          dokumen ke Google Drive milik mereka sendiri; hanya <em>tautan berbagi</em> yang tersimpan
+          di sistem aplikasi.
+        </div>
+      </div>
+    </div>
+
+    <!-- S3 -->
+    <div class="section" id="s3">
+      <div class="section-head">
+        <div class="section-num">3</div>
+        <h2>Cara Kami Menggunakan Data</h2>
+      </div>
+      <p>Data yang dikumpulkan digunakan semata-mata untuk keperluan berikut:</p>
+      <ul class="pp-list">
+        <li>Autentikasi dan manajemen sesi akun pengguna</li>
+        <li>Menampilkan identitas pada profil dan fitur percakapan (chat) dalam aplikasi</li>
+        <li>Mengirim notifikasi terkait proses bimbingan (revisi dokumen, jadwal, keputusan judul)</li>
+        <li>Verifikasi identitas dua langkah via SMS OTP (jika nomor telepon diaktifkan)</li>
+        <li>Pengelompokan pengguna berdasarkan peran untuk menampilkan fitur yang sesuai</li>
+        <li>Keperluan administrasi akademik di lingkungan institusi</li>
+      </ul>
+      <div class="callout">
+        <span class="callout-icon material-symbols-rounded">block</span>
+        <div>
+          <strong>Kami tidak menggunakan data Anda</strong> untuk keperluan iklan, analitik
+          komersial, pembuatan profil pemasaran, atau tujuan lain di luar fungsi akademik aplikasi.
+        </div>
+      </div>
+    </div>
+
+    <!-- S4 -->
+    <div class="section" id="s4">
+      <div class="section-head">
+        <div class="section-num">4</div>
+        <h2>Penyimpanan &amp; Keamanan Data</h2>
+      </div>
+      <p>
+        Data pengguna disimpan pada layanan cloud yang terintegrasi dengan aplikasi.
+        Kami menerapkan sejumlah langkah keamanan untuk melindungi informasi Anda:
+      </p>
+      <ul class="pp-list">
+        <li>Autentikasi menggunakan Email &amp; Password atau Google Sign-In (OAuth 2.0)</li>
+        <li>Verifikasi dua langkah opsional melalui SMS OTP untuk nomor telepon yang terdaftar</li>
+        <li>NIM dan NIDN bersifat tidak dapat diubah setelah registrasi demi menjaga integritas data akademik</li>
+        <li>Dokumen skripsi tidak tersimpan langsung di server aplikasi — hanya tautan Google Drive yang disimpan</li>
+      </ul>
+      <p>
+        Meskipun kami menerapkan standar keamanan yang wajar, tidak ada sistem digital yang
+        sepenuhnya bebas risiko. Pengguna dianjurkan untuk selalu menjaga kerahasiaan kata sandi
+        dan tidak berbagi akses dengan pihak lain.
+      </p>
+    </div>
+
+    <!-- S5 -->
+    <div class="section" id="s5">
+      <div class="section-head">
+        <div class="section-num">5</div>
+        <h2>Berbagi Data dengan Pihak Ketiga</h2>
+      </div>
+      <p>
+        Kami <strong>tidak menjual, menyewakan, atau memperdagangkan</strong> data pribadi
+        pengguna kepada pihak manapun. Data hanya dapat melibatkan pihak ketiga dalam
+        situasi terbatas berikut:
+      </p>
+      <ul class="pp-list">
+        <li>
+          <div>
+            <strong>Google (Autentikasi &amp; Drive)</strong><br>
+            Login via Google Sign-In dan penyimpanan dokumen melalui Google Drive tunduk pada
+            <a href="https://policies.google.com/privacy" target="_blank">Kebijakan Privasi Google</a>.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Trimbo (Fitur Kuis)</strong><br>
+            Konten kuis bersumber dari database Trimbo. Akses ke fitur ini dapat tunduk pada
+            ketentuan platform Trimbo yang berlaku.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Institusi Akademik (Admin Kampus)</strong><br>
+            Data akademik (nama, NIM/NIDN) dapat diakses oleh admin kampus dalam konteks
+            pengelolaan proses bimbingan skripsi di lingkungan Universitas Amikom Purwokerto.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- S6 -->
+    <div class="section" id="s6">
+      <div class="section-head">
+        <div class="section-num">6</div>
+        <h2>Hak-Hak Pengguna</h2>
+      </div>
+      <p>Sebagai pengguna, Anda memiliki hak-hak berikut terkait data pribadi Anda:</p>
+      <div class="rights-grid">
+        <div class="right-item">
+          <div class="ri-title">
+            <span class="material-symbols-rounded">visibility</span>
+            Hak Akses
+          </div>
+          <p>Melihat data pribadi yang tersimpan melalui menu <strong>Informasi Pribadi</strong> di halaman profil.</p>
+        </div>
+        <div class="right-item">
+        <div class="ri-title">
+          <span class="material-symbols-rounded">edit</span>
+          Hak Koreksi
+        </div>
+          <p>Memperbarui <strong>nama lengkap</strong> dan <strong>foto profil</strong> kapan saja melalui menu profil.</p>
+        </div>
+        <div class="right-item">
+          <div class="ri-title">
+            <span class="material-symbols-rounded">lock</span>
+            Hak Pembatasan
+          </div>
+          <p>Memilih untuk tidak menambahkan nomor telepon, karena fitur ini bersifat opsional.</p>
+        </div>
+        <div class="right-item">
+          <div class="ri-title">
+            <span class="material-symbols-rounded">description</span>
+            Hak Informasi
+          </div>
+          <p>Mengetahui bagaimana data diproses melalui dokumen Kebijakan Privasi ini.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px;">
+        <span class="callout-icon material-symbols-rounded">warning</span>
+        <div>
+          <strong>Catatan:</strong> Beberapa data (email, NIM, NIDN) bersifat permanen dan tidak
+          dapat diubah setelah akun terdaftar, guna menjaga integritas data sistem akademik.
+        </div>
+      </div>
+    </div>
+
+    <!-- S7 -->
+    <div class="section" id="s7">
+      <div class="section-head">
+        <div class="section-num">7</div>
+        <h2>Pengguna di Bawah Umur</h2>
+      </div>
+      <p>
+        Aplikasi ini dirancang untuk digunakan oleh mahasiswa perguruan tinggi dan tenaga
+        akademik. Kami tidak secara sengaja mengumpulkan data dari individu berusia di bawah
+        17 tahun.
+      </p>
+      <p>
+        Apabila Anda menduga bahwa data dari pengguna di bawah umur telah dikumpulkan tanpa
+        sepengetahuan orang tua atau walinya, harap segera menghubungi kami melalui kontak
+        yang tersedia di bagian akhir dokumen ini.
+      </p>
+    </div>
+
+    <!-- S8 -->
+    <div class="section" id="s8">
+      <div class="section-head">
+        <div class="section-num">8</div>
+        <h2>Perubahan Kebijakan Privasi</h2>
+      </div>
+      <p>
+        Kami dapat memperbarui Kebijakan Privasi ini sewaktu-waktu seiring dengan perkembangan
+        fitur atau ketentuan hukum yang berlaku. Apabila terdapat perubahan signifikan,
+        pengguna akan diberitahu melalui:
+      </p>
+      <ul class="pp-list">
+        <li>Notifikasi dalam aplikasi</li>
+        <li>Pembaruan halaman ini dengan tanggal revisi terbaru yang tertera di bagian atas</li>
+      </ul>
+      <p>
+        Penggunaan aplikasi yang berlanjut setelah perubahan kebijakan diberlakukan dianggap
+        sebagai persetujuan terhadap kebijakan yang telah diperbarui.
+      </p>
+    </div>
+
+    <!-- S9 -->
+    <div class="section" id="s9">
+      <div class="section-head">
+        <div class="section-num">9</div>
+        <h2>Hubungi Kami</h2>
+      </div>
+      <p>
+        Jika Anda memiliki pertanyaan, kekhawatiran, atau permintaan terkait data pribadi Anda,
+        jangan ragu untuk menghubungi tim pengembang Academic Atelier:
+      </p>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <span class="material-symbols-rounded">mail</span>
+        </div>
+        <div>
+          <h4>Email Resmi Pengembang</h4>
+          <a href="mailto:realacademicatelier@gmail.com">realacademicatelier@gmail.com</a>
+        </div>
+      </div>
+      <p style="margin-top:14px;">
+        Anda juga dapat menyampaikan masukan melalui menu
+        <strong>Pusat Bantuan › Dukungan dan Legalitas › Formulir Umpan Balik</strong>
+        di dalam aplikasi.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Academic Atelier</strong> Semua hak dilindungi.</p>
+  <p style="margin-top:5px;">Versi Dokumen 1.0.2 &nbsp;·&nbsp; Terakhir diperbarui: Mei 2026</p>
+</footer>
+
+<script>
+  // Active TOC highlight on scroll
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('#toc-list a');
+
+  function setActive() {
+    let current = '';
+    sections.forEach(s => {
+      const top = s.getBoundingClientRect().top;
+      if (top <= 100) current = s.id;
+    });
+    tocLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+</script>
+</body>
+</html>
